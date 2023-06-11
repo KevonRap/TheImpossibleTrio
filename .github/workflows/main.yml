@@ -17,7 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   buildWindows:
-    runs-on: windows-latest
+    runs-on: mobile-latest
     
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -51,9 +51,9 @@ jobs:
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
       - name: Compile
-        run: haxelib run lime build windows --app-version="4.0.0-${{ github.run_id}}"
+        run: haxelib run lime build mobile --app-version="4.0.0-${{ github.run_id}}"
       - name: Publish Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: windowsBuild
+          name: mobileBuild
           path: export/release/windows/bin
