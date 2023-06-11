@@ -55,5 +55,5 @@ jobs:
       - name: Publish Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: mobileBuild
-          path: export/release/windows/bin
+          name: mobile
+          path: export/release/mobile/bin
